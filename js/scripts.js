@@ -21,6 +21,8 @@ function generateTOC() {
   var toc = $('#toc');
   // iterate through all headings in body
   $.each($("#content").find('h1,h2,h3,h4'), function(index, item) {
+    // add unique id to original item
+    $(item).attr('id',encodeURIComponent($(item).text().trim().replace(/ /g,"_")));
     // generate entry for toc
     var thisEntry = $("<a href='#" + $(item).attr('id') + "'></a>");
     var thisTOCHeading = $("<" + $(item).get(0).tagName + ">").text($(item).text());
@@ -31,16 +33,22 @@ function generateTOC() {
     allHeadings.push($(item));
     allTOCHeadings.push(thisTOCHeading);
   });
-  setEntryActive(0);
+
+  // only do something if there is content
+  if (allHeadings.length && allTOCHeadings.length) {
+    setEntryActive(0);
+  } else {
+    toc.html("No headings found");
+  }
 }
 
 function triggerTOCUpdate() {
-  needUpdate = true;
+    needUpdate = true;
 }
 
 function updateTOC() {
   // check if we scrolled
-  if (needUpdate) {
+  if (needUpdate && allHeadings.length && allTOCHeadings.length) {
     // check if active entry moved
     var relativeMovement = activeHeadingLastPos - allHeadings[activeHeadingIndex].offset().top;
     // remember if active heading has to be reset

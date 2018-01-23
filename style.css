@@ -70,18 +70,52 @@ a {
 }
 
 
-
-#content table {
-  border: 20px solid #ddd;
-  max-width: 600px;
+#content p, #content ol {
+  max-width: 1000px;
+  line-height: 140%;
 }
 
-#content td {
+#content table {
+  max-width: 800px;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+#content thead, #content tr {
+  border-bottom: 2px solid #ccc;
+}
+
+#content thead {
+  text-align:left;
+}
+
+#content td, #content th {
   padding: 10px;
   vertical-align: top;
 }
 
+
 #content a {
   background-color: black;
   color: white;
+}
+
+#content li {
+  margin-top: 10px;
+}
+
+blockquote {
+    border: 5px solid #ccc;
+    margin-left: 0;
+    padding: 10px;
+    max-width: 700px;
+}
+
+blockquote img {
+  margin-top: 10px;
+}
+
+img.image-process-robotmode, img.image-process-robotmodesymbol {
+  display: block;
+  margin-bottom: 7px;
 }
