@@ -113,9 +113,27 @@ blockquote {
 
 blockquote img {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 img.image-process-robotmode, img.image-process-robotmodesymbol {
   display: block;
   margin-bottom: 7px;
+}
+
+img.image-process-inline {
+    vertical-align: bottom;
+}
+
+code {
+  background-color: black;
+  color: white;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-family: 'Fira Sans';
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
