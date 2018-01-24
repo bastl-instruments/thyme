@@ -22,7 +22,7 @@ var activeHeadingIndex = 0;
 var oldActiveHeadingIndex = 0;
 var activeHeadingLastPos = 0;
 
-var pointerYOffset = 10;
+var pointerYOffset = 200;
 
 function generateTOC() {
   // get the element to place the toc
@@ -67,6 +67,11 @@ function updateTOC() {
       while(activeHeadingIndex >= 1 && allHeadings[activeHeadingIndex].offset().top > pointerYOffset) {
         // go to previous heading
         activeHeadingIndex = activeHeadingIndex - 1;
+        changedActive = true;
+      }
+      // set to to first entry when we scrolled to top
+      if (allHeadings[0].offset().top == 0) {
+        activeHeadingIndex = 0;
         changedActive = true;
       }
     }
