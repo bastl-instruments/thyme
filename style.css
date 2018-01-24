@@ -24,6 +24,7 @@ a {
 #content {
   width: auto;
   padding-left: 70px;
+  padding-right: 20px;
 }
 
 /* TOC */
@@ -123,6 +124,7 @@ a {
 blockquote {
     border: 5px solid #ccc;
     margin-left: 0;
+    margin-right: 0;
     padding: 10px;
     max-width: 700px;
 }
@@ -131,6 +133,18 @@ blockquote img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+img.image-process-main {
+  width: 100%;
+  max-width: 600px;
+}
+
+img.image-process-small {
+  width: 60%;
+  max-width: 400px;
+}
+
+
 
 img.image-process-robotmode, img.image-process-robotmodesymbol {
   display: block;
@@ -152,4 +166,13 @@ code {
   letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  #toc {
+    display: none;
+  }
+  #content {
+    padding-left: 40px;
+  }
 }
