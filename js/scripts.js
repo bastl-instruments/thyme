@@ -1,8 +1,16 @@
 $(function(){
   generateTOC();
-  $("#content").scroll(triggerTOCUpdate);
-  setInterval(updateTOC, 100);
-  triggerTOCUpdate();
+
+  $(window).on("load", function() {
+    // convert hidden anchor to real one just on startup
+    document.location.hash = document.location.hash.replace(/^#\//, '#');
+    console.log(document.location.hash);
+
+    $("#content").scroll(triggerTOCUpdate);
+    setInterval(updateTOC, 100);
+    triggerTOCUpdate();
+  });
+
 });
 
 ///////////////////////////////////////////////////////
@@ -14,7 +22,7 @@ var activeHeadingIndex = 0;
 var oldActiveHeadingIndex = 0;
 var activeHeadingLastPos = 0;
 
-var pointerYOffset = 30;
+var pointerYOffset = 10;
 
 function generateTOC() {
   // get the element to place the toc
@@ -74,7 +82,10 @@ function updateTOC() {
 
     // actually change the active heading if new index was selected
     if (changedActive) {
+      // scroll the toc
       setEntryActive(activeHeadingIndex);
+      // update url anchor in a hidden way to not trigger scrolling
+      document.location.hash = "#/" + allHeadings[activeHeadingIndex].attr('id');
     }
 
     // remember position of this heading
