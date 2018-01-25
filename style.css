@@ -83,7 +83,7 @@ a {
 }
 
 
-#content p, #content ol {
+#content p, #content ol, #content td {
   max-width: 1000px;
   line-height: 140%;
 }
@@ -136,19 +136,23 @@ blockquote img {
 
 img.image-process-main {
   width: 100%;
+  height: auto;
   max-width: 600px;
 }
 
 img.image-process-small {
   width: 60%;
+  height: auto;
   max-width: 400px;
 }
 img.image-process-robotmode {
   width: 100%;
+  height: auto;
   max-width: 600px;
 }
 img.image-process-robotmodesymbol {
   width: 80%;
+  height: auto;
   max-width: 80px;
 }
 
@@ -176,11 +180,67 @@ code {
   white-space: nowrap;
 }
 
+hr {
+    height: 10px;
+    border: none;
+    background-color: #ccc;
+}
+
+#content a[data-footnote]:after {
+  content: attr(data-footnote);
+  vertical-align: super;
+  font-size: 70%;
+  margin-left: 2px;
+  font-weight: 800;
+}
+
+#content a[data-footnote] {
+  text-decoration: none;
+  position: relative;
+  border-bottom: none;
+}
+
+#content a[data-footnote]:hover:before {
+  content: attr(data-title);
+  display: inline-block;
+  padding: 10px;
+  background: rgba(50, 50, 50, 0.9);
+  color: #FFF;
+  position: absolute;
+  top: -95%;
+  left: 110%;
+  border-radius: 6px;
+  width: 200px;
+  font-size: 80%;
+  line-height: 150%;
+}
+
+
+
+
+
+
 @media (max-width: 1100px) {
   #toc {
     display: none;
   }
   #content {
     padding-left: 40px;
+  }
+}
+
+@media print {
+  #toc {
+    display: none;
+  }
+  #content {
+    height: inherit;
+    overflow-y: auto;
+  }
+  h1:not(:first-of-type) {
+    page-break-before: always;
+  }
+  blockquote {
+    page-break-inside: avoid;
   }
 }

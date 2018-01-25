@@ -4,7 +4,6 @@ $(function(){
   $(window).on("load", function() {
     // convert hidden anchor to real one just on startup
     document.location.hash = document.location.hash.replace(/^#\//, '#');
-    console.log(document.location.hash);
 
     $("#content").scroll(triggerTOCUpdate);
     setInterval(updateTOC, 100);
