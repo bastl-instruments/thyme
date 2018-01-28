@@ -10,26 +10,26 @@
 <div id="toc"></div>
 <div id="content">
 <h1>Introduction</h1>
-<p>This document is intended as a complete reference of Thyme’s functionality.<br/>
-Look here if you are searching for explanations of specific features or if you are one of those persons who likes to read through manuals before they use stuff.
+<p>This document is intended as a complete reference manual of Thyme’s functionality.<br/>
+Look here if you are searching for explanations of specific features or if you are one of those persons who like to read through manuals before they use stuff.
 If you just want to know the bare minimum to get started, check out the <a href="">short manual</a>.</p>
 <h2>What is Thyme</h2>
 <p>Thyme is a versatile sound processing unit: It takes an audio input signal, modifies it and sends it to the output<a data-footnote="1" data-title="That’s the standard configuration. You can also use it as a synthesizer, generating audio without an input signal. But let’s leave this for later.." href="#footnote-1"></a>.
-The digital sound processing that it is performed can be summarized as a “Sequenceable Robot-Operated Digital Tape Machine”.
+The digital sound processing performed by Thyme can be summarized as a “Sequenceable Robot-Operated Digital Tape Machine”.
 Here you see a greatly simplified illustration of its core functionality.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Principle.png"/></p>
 <p>Imagine the tape moving from left to right (motor turning clockwise).
 The signal that is written to the tape by the write head will be read by multiple read heads after certain time periods.
 These signals are summed, sent to the output and also added back to the input signal, creating a feedback loop.</p>
-<p>All parameters of the signal processing can be tweaked live;
+<p>All signal processing parameters can be tweaked live;
 either manually or by modulation sources which we call "Robots".
 Robots are similar to LFOs but go much further.
-On top of that, you can switch between different configurations with the single press of a button or with the integrated sequencer.</p>
+On top of that, you can switch between different configurations at the push of a button or with the integrated sequencer.</p>
 <h2>Functionality Overview</h2>
-<p>Before we dive deep into Thyme’s signal processing, let’s take a birds eye view on the instrument, its function blocks and how they interact</p>
+<p>Before we dive deeper into Thyme’s signal processing, let’s take a bird's eye view on the instrument, its function blocks and how they interact.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Func-Overview.png"/></p>
 <p>The core of the instrument is the <strong>Digital Tape Machine</strong> at which we took a brief look in the previous section.
-It’s operation is defined by 9 parameters, which can be tweaked manually or each by their own dedicated <strong>Robot</strong>.</p>
+Its operation is defined by 9 parameters which can be tweaked manually or each by their own dedicated <strong>Robot</strong>.</p>
 <p>All settings of all parameters and all Robots combined is called a <strong>Sound</strong>.
 There are eight of these fully customizable Sounds, one being active at a time.
 You can switch between the Sounds manually or let the internal sequencer handle it for you - according to customizable patterns.<a data-footnote="2" data-title="This is referring to a single bank. There are 8 banks in total. Check Memory Section."></a></p>
@@ -64,7 +64,7 @@ The knobs symbolize parameters that can be manipulated.</p>
 </tr>
 <tr>
 <td>Levels</td>
-<td>The read heads that are controlled by Spacing can have individual contributions to the feedback and output signal. This knob controls all of them at the same time. In the last quarter, the loop gain is greater than one, allowing self-excitation.</td>
+<td>The read heads controlled by Spacing can have individual contributions to the feedback and output signal. This knob controls all of them at simultaneously. In the last quarter the loop gain is greater than one, allowing self-excitation.</td>
 </tr>
 <tr>
 <td>Feedback</td>
@@ -72,7 +72,7 @@ The knobs symbolize parameters that can be manipulated.</p>
 </tr>
 <tr>
 <td>Filter</td>
-<td>Next to scaling, you can also filter the feedback and output signal. In the lower half you control the cutoff frequency of a lowpass filter, in the upper half it’s a highpass. Right in the center position, the filter is bypassed.</td>
+<td>Next to scaling, you can also filter the feedback and output signal. In the lower half you control the cutoff frequency of a lowpass filter, in the upper half it’s a highpass. Right in the center position the filter is bypassed.</td>
 </tr>
 <tr>
 <td>Wet/Dry</td>
@@ -88,7 +88,7 @@ The knobs symbolize parameters that can be manipulated.</p>
 <blockquote>
 <h2>Mono Input Mode</h2>
 <p>When you insert a mono cable into the audio input, it would normally be interpreted and output as a stereo signal with one channel being silent.<br>
-To avoid this, activate Mono Input Mode, which uses the one channel of the input signals for both channels.</br></p>
+To avoid this, activate Mono Input Mode, which uses the single channel of the input signal for both channels.</br></p>
 <p>Hold down <code>Fn</code> and press <code>BYPASS</code> to toggle mono input mode. The current status is indicated by the <code>Bypass</code> LED.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_MonoInputMode-Set.png"/></p>
 </blockquote>
@@ -96,17 +96,17 @@ To avoid this, activate Mono Input Mode, which uses the one channel of the input
 <blockquote>
 <h2>Knob Freezing</h2>
 <p>Before you start tweaking some knobs, you should be familiar with the special yet intuitive way the knobs react.</p>
-<p>In different views and different Sounds, a single knob is used to set different values.
-This is realized by a concept we call 'knob freezing'.
+<p>In different views and different Sounds one single knob is used to set different values.
+This is realized by a concept we call <strong>Knob Freezing</strong>.
 It is based on each knob being equipped with a dimmable LED that indicates the current value of the knob - from 0 to full amount.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_KnobTracking.png"/></p>
-<p>A knob can be frozen, meaning the value it holds (indicated by the LED) does not match the physical position of the knob.
+<p>A knob can be frozen meaning the value it holds (indicated by the LED) does not match the physical position of the knob.
 This happens for example when you switch to a different Sound which has this particular parameter set differently.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_KnobUnFreezing.png"/></p>
-<p>To modify the value, the knob needs to be unfrozen, which can be achieved in two ways:</p>
+<p>To modify the value, the knob needs to be unfrozen which can be achieved in two ways:</p>
 <ul>
 <li>
-<p>Quickly move the knob a small amount in any direction. The parameter value will transition to the current value of the physical knob position and will start tracking its movement. This method allows a quick but glitch-free modification of the controlled parameter.</p>
+<p>Quickly move the knob a slightly in any direction. The parameter value will transition to the current value of the physical knob position and will start tracking its movement. This method allows a quick but glitch-free modification of the controlled parameter.</p>
 </li>
 <li>
 <p>Move the knob slowly to the value indicated by the LED. After they match, the knob value will be tracking the physical knob position. This method ensures a very controlled modification of the parameter.</p>
@@ -119,8 +119,8 @@ You can activate them independently from each other with their dedicated buttons
 <p><img class="image-process-main" src="images/derivatives/main/thyme_ParameterSwitches.png"/></p>
 <h3>Delay Sync</h3>
 <p>The position of the main read head defines the time between writing the signal to the tape and reading it back.
-This time can be chosen freely or - when activating the <code>SYNC</code> switch - quantized to rhythmical intervals (eight-notes, quarters,..).
-The intervals are derived from is the tempo of the sequencer.
+This time can be chosen freely or - with the <code>SYNC</code> switch activated - quantized to rhythmical intervals (eight-notes, quarters,..).
+The intervals are derived from the tempo of the sequencer.
 See the <a href="#Clock_Source">sequencer section</a> for how to set this tempo.
 The possible multiplications / divisions of the tempo are: 1/32, 1/16, 1/8, 1/4, 1/3, 1/2, 1, 2, 3, 4, 6, 8, 12, 16, 32, 48, 56 and so forth.
 Sync is also active for extra read heads - unless this is <a href="#Extended_Parameter_Settings">deactivated</a>.</p>
@@ -135,17 +135,17 @@ In other words: Tweaking the tape speed will not affect the final delay time.</p
 <p>The Freeze Mode turns Thyme into a looping device.
 To achieve this, the flowgraph is dynamically reconfigured and some parameters slightly change their meaning:</p>
 <p>Once you trigger the <code>Freeze</code> Mode (either by activating it or by activating a Sound that has freeze mode enabled), the clean input signal is written to the tape for the time equal to the main read head’s delay time.
-During that period, the feedback and delay knob LEDs are turned off. The input signal is also routed directly to the output.</p>
+During that period the feedback and delay knob LEDs are turned off. The input signal is also routed directly to the output.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_FreezeLoad.png"/></p>
-<p>After that, the input is disconnected and will only be reconnected once you deactivate freeze mode.
+<p>After that the input is disconnected and will only be reconnected once you deactivate freeze mode.
 There is now a closed loop with the tape and the feedback path.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_FreezeSteady.png"/></p>
 <p>The overall amplification of the loop is controlled by the <code>feedback</code> knob.
 When it is on full, there will be a steady loop; if it is lower, the signal will fade out over time.
 <a data-footnote="5" data-title="When entering freeze mode, the feedback is set to full to form a steady loop. The old value is restored once you leave freeze mode and feedback is on full in that moment."></a></p>
 <p>The signal from the three extra read heads is not mixed into the loop but only added to the output.
-This way you can use them to spice up your loop but always go back to the clean version.
-In the second half of the <code>Levels</code> knob, this behavior changes and the signal from the extra read heads start to get mixed into the loop.</p>
+This way you can use them to spice up your loop but also go back to the clean version at any time you wish.
+In the second half of the <code>Levels</code> knob this behavior changes and the signal from the extra read heads start to get mixed into the loop.</p>
 <h2>Extended Parameter Settings</h2>
 <p>For some parameters there exist additional switches that allow to slightly alter the behavior of the machine.
 As they are less performative they are a bit more hidden.</p>
@@ -167,7 +167,7 @@ As they are less performative they are a bit more hidden.</p>
 </tr>
 <tr>
 <td><code>spacing</code></td>
-<td>The three extra read heads also react to the SYNC switch (LED on; default) or not (LED off).</td>
+<td>The three extra read heads either react to the SYNC switch (LED on; default) or not (LED off).</td>
 </tr>
 </tbody>
 </table>
@@ -178,8 +178,8 @@ The current state of each setting is shown by the knob LED.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Alternate-Settings.png"/></p>
 </blockquote>
 <h2>Sounds</h2>
-<p>There are eight <strong>Sounds</strong> and a <strong>Bypass Sound</strong> to switch between.
-The regular Sounds are pre-configured to "clean setting" - meaning all parameters are in a position that don't affect the signal and are waiting for your edits<a data-footnote="6" data-title="By default, changes made to Sounds are lost when power cycling the device. For persistent storage see Memory section"></a>.
+<p>There are eight <strong>Sounds</strong> and one <strong>Bypass Sound</strong> to switch between.
+The regular Sounds are pre-configured to "clean setting" - meaning all parameters are in a positions that don't affect the signal and are waiting for your edits<a data-footnote="6" data-title="By default, changes made to Sounds are lost when power cycling the device. For persistent storage see Memory section"></a>.
 The Bypass Sound will pass the input signal unmodified to the output; only the global Volume parameter can be tweaked.</p>
 <blockquote>
 <h3>Switch Sounds</h3>
@@ -192,26 +192,26 @@ The active Sound is indicated by an LED.<a data-footnote="7" data-title="When sw
 This is indicated by the <img class="image-process-inline" src="images/derivatives/inline/thyme_RobotSymbol.png"/> symbol next to the knob.</p>
 <blockquote>
 <h2>Select a Robot</h2>
-<p>All nine Robots work independently from each other and run at the same time; but you can only control one at a time.
+<p>All nine Robots work independently from each other and run simultaneously, but you can only control one at a time.
 To select the one to control, press and hold down <code>Robot Select</code>.</p>
 <p>The selected Robot will always be shown with full brightness.
 All other parameters will display the output of their Robot.</p>
-<p>To select a Robot for a different parameter, simply move the corresponding knob a small amount.
+<p>To select a Robot for a different parameter, simply move the corresponding knob slightly.
 The selection change is directly indicated by full brightness of the LED as explained above.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-Select.png"/></p>
-<p>The output of the selected Robot is at any time indicated by the dedicated Robot LED.</p>
+<p>The output of the selected Robot is permanently indicated by the dedicated Robot LED.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-LED.png"/></p>
 </blockquote>
 <p>The Robot’s modulation curve is mainly defined by three parameters: <strong>Mode</strong>, <strong>Rate</strong> and <strong>Shape</strong>.</p>
-<p>With <strong>Amount</strong> you can define how strong this modulation is.
+<p>With <strong>Amount</strong> you can define how strong this modulation should be.
 Setting it to zero (fully left) will turn off modulation by this Robot.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-General.png"/></p>
 <h2>Robot Modes</h2>
-<p>A Robot can be one out of eight <strong>Modes</strong> and be controlled inside this Mode by the two parameters <strong>Rate</strong> and <strong>Shape</strong>.
-In every Mode these controls have a specific meaning but in general one may say that Rate refers to how fast the waveform changes and Shape changes its decoration.
+<p>A Robot can be one out of eight <strong>Modes</strong> and controlled inside this Mode by the two parameters <strong>Rate</strong> and <strong>Shape</strong>.
+In every Mode these controls have a specific meaning but in general you can say that Rate refers to how fast the waveform changes and Shape changes its decoration.
 The Modes can be divided into two groups: oscillators and non-oscillators.</p>
 <h3>Oscillator Modes</h3>
-<p>In all these Robot Modes, Rate controls the frequency of the oscillators.
+<p>In all these Robot Modes Rate controls the frequency of the oscillators.
 All pictures show oscillators for the same fixed Rate and variable Shape.</p>
 <table>
 <thead>
@@ -231,7 +231,7 @@ All pictures show oscillators for the same fixed Rate and variable Shape.</p>
 </tr>
 <tr>
 <td><img class="image-process-robotmodesymbol" src="images/derivatives/robotmodesymbol/thyme_Robot-Mode-Symbol-3.png"/> XOR’ed Flopping Triangle</td>
-<td><img class="image-process-robotmode" src="images/derivatives/robotmode/thyme_Robot-Mode-3.png"/> The Basic waveshape is a triangle oscillator turned off half of the time in regular intervals during on period. On top of that, parts of the waveform are inverted due to a XOR modulation.</td>
+<td><img class="image-process-robotmode" src="images/derivatives/robotmode/thyme_Robot-Mode-3.png"/> The basic waveshape is a triangle oscillator turned off half of the time at regular intervals during one period. On top of that, parts of the waveform are inverted due to a XOR modulation.</td>
 </tr>
 <tr>
 <td><img class="image-process-robotmodesymbol" src="images/derivatives/robotmodesymbol/thyme_Robot-Mode-Symbol-4.png"/> Stepped Ramp</td>
@@ -258,11 +258,11 @@ All pictures show oscillators for the same fixed Rate and variable Shape.</p>
 <tbody>
 <tr>
 <td><img class="image-process-robotmodesymbol" src="images/derivatives/robotmodesymbol/thyme_Robot-Mode-Symbol-7.png"/> Envelope Follower</td>
-<td><img class="image-process-robotmode" src="images/derivatives/robotmode/thyme_Robot-Mode-7.png"/> This robot tracks the loudness of the input signal in a specific frequency range. With the Rate parameter, you can select the frequency range you want to track. This allows you to modulate any parameter with the dynamics of the input signal in the bass, low mid, high mid or high frequency region. It will quickly react on peaks and then settle fast or slowly, depending on the Shape you set. The picture illustrates the effect of different Shape settings with a fixed Rate for a given input signal.</td>
+<td><img class="image-process-robotmode" src="images/derivatives/robotmode/thyme_Robot-Mode-7.png"/> This robot tracks the loudness of the input signal in a specific frequency range. With the Rate parameter you can select the frequency range you want to track. This allows you to modulate any parameter with the dynamics of the input signal in the bass, low mid, high mid or high frequency region. It will quickly react on peaks and then settle fast or slowly, depending on the Shape you set. The picture illustrates the effect of different Shape settings with a fixed Rate for a given input signal.</td>
 </tr>
 <tr>
 <td><img class="image-process-robotmodesymbol" src="images/derivatives/robotmodesymbol/thyme_Robot-Mode-Symbol-8.png"/> External Control Voltage</td>
-<td><img class="image-process-robotmode" src="images/derivatives/robotmode/thyme_Robot-Mode-8.png"/> Use the external control voltage (inserted to <a href="#Connectivity">CV jack</a>) to modify a parameter. The Rate control has no effect, Shape let’s you add lowpass filtering / slew limiting.</td>
+<td><img class="image-process-robotmode" src="images/derivatives/robotmode/thyme_Robot-Mode-8.png"/> Use the external control voltage (inserted to <a href="#Connectivity">CV jack</a>) to modify a parameter. The Rate control has no effect, Shape lets you add lowpass filtering / slew limiting.</td>
 </tr>
 </tbody>
 </table>
@@ -294,43 +294,43 @@ There are three different settings: <strong>Negative</strong>, <strong>Bipolar</
 <p><img class="image-process-small" src="images/derivatives/small/thyme_Robot-Polarity.png"/></p>
 <blockquote>
 <h3>Set Robot Polarity</h3>
-<p>You can set the polarity of the selected Robot by holding down <code>Robot Select</code> and pressing one of <code>Freeze</code>/<code>Link</code>/<code>Sync</code>.
-While holding down <code>Robot Select</code>, the current polarity is indicated by an LED.</p>
+<p>You can set the polarity of the selected Robot by holding down <code>Robot Select</code> and pressing one of the buttons <code>Freeze</code>/<code>Link</code>/<code>Sync</code>.
+While <code>Robot Select</code>is being pressed, the current polarity is indicated by an LED.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-Polarity-Set.png"/></p>
 </blockquote>
 <h2>Robot Phase</h2>
 <p>When activating a Sound, all Robots are setup according to the settings stored for this particular Sound.
-Robots that are set to oscillator-type Modes<a data-footnote="13" data-title="In non-oscillator-type Modes, the phase setting is ignored."></a>, also reset their outputs.
-Usually, they are set to zero, so - for example in triangular Mode - the modulation is off in the very first moment and rises.
-This starting point can be also set to three other positions.</p>
+Robots set to oscillator-type Modes<a data-footnote="13" data-title="In non-oscillator-type Modes, the phase setting is ignored."></a> also reset their outputs.
+Usually, they are set to zero, so - for example in triangular Mode - the modulation is off at the very first moment and rises.
+This starting point can also be set to three other positions.</p>
 <p><img class="image-process-small" src="images/derivatives/small/thyme_Robot-Phase.png"/></p>
 <blockquote>
 <h3>Set Robot Phase</h3>
-<p>You can set the polarity of the selected Robot by holding down <code>Robot Select</code> and pressing one of the four <code>Pattern</code> buttons. While holding down <code>Robot Select</code>, the current phase setting is indicated by an LED.</p>
+<p>You can set the polarity of the selected Robot by holding down <code>Robot Select</code> and pressing one of the four <code>Pattern</code> buttons. While  <code>Robot Select</code> is being pressed, the current phase setting is indicated by an LED.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-Phase-Set.png"/></p>
 </blockquote>
 <h2>Robot Stereo Polarity</h2>
 <p>Normally, both stereo channels are processed equally.
 When you activate stereo polarity on a Robot, it will influence the left and right channel in the opposite direction.</p>
-<p>For oscillator-type Robots Modes, this means phase-shifting the waveforms for both channels (on the left channel, the triangle oscillator is at its peak while it’s in its valley on the right channel), for Envelope and Control Voltage, this means inverting the polarity (on the left left channel the robot would add up to the knob value, on the right channel it would subtract).
-In stereo polarity, the LEDs of the knobs indicate the current parameter value for the left channel only.</p>
+<p>For oscillator-type Robot Modes this means phase-shifting the waveforms for both channels (on the left channel, the triangle oscillator is at its peak while it’s in its valley on the right channel), for Envelope and Control Voltage this means inverting the polarity (on the left left channel the robot would add up to the knob value, on the right channel it would subtract).
+In stereo polarity the LEDs of the knobs indicate the current parameter value for the left channel only.</p>
 <blockquote>
 <h3>Set Robot Stereo Polarity</h3>
 <p>You can activate/deactivate stereo polarity of the selected Robot by holding down <code>Robot Select</code> and pressing <code>Robot Sync</code>.
-While holding down <code>Robot Select</code>, the LED will indicate the current status.</p>
+While <code>Robot Select</code> is being pressed, the LED will indicate the current status.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-Stereo-Set.png"/></p>
 </blockquote>
-<h2>Volt per Octave</h2>
-<p>When modulating Tape Speed or Delay Fine by external control voltage (by setting their Robots to CV Mode), the voltage is not interpreted linearly but as volt-per-octave.</p>
-<p>This means by applying a steady voltage of 1V to the jack, the tape speed or delay length would be doubled<a data-footnote="14" data-title="Given that Amount is on full."></a>, for 2V the factor would be four and so on<a data-footnote="15" data-title="The control voltage may range from 0V to 5V, giving a maximum factor of 32."></a>.</p>
-<p>Depending on the polarity setting, the modulated parameter is multiplied or divided by the factor defined by the control voltage. The mapping is done in a way that positive polarity would in most situations increase the pitch (higher tape speed, shorter delay) and negative polarity would reduce the pitch (lower tape speed, longer delay)<a data-footnote="16" data-title="Bipolar polarity cannot be set for Robots that are in CV Mode"></a>.</p>
+<h2>Volt-per-Octave</h2>
+<p>When Tape Speed or Delay Fine is modulated by external control voltage (by setting their Robots to CV Mode), the voltage is not interpreted linearly but as volt-per-octave.</p>
+<p>This means that when a steady voltage of 1V is applied to the jack, the tape speed or delay length will be doubled<a data-footnote="14" data-title="Given that Amount is on full."></a>, for 2V the factor will be four and so on<a data-footnote="15" data-title="The control voltage may range from 0V to 5V, giving a maximum factor of 32."></a>.</p>
+<p>Depending on the polarity setting the modulated parameter is multiplied or divided by the factor defined by the control voltage. The mapping is implemented in such a way that positive polarity will in most situations increase the pitch (higher tape speed, shorter delay) and negative polarity will reduce the pitch (lower tape speed, longer delay)<a data-footnote="16" data-title="Bipolar polarity cannot be set for Robots that are in CV Mode"></a>.</p>
 <h1>Sequencer</h1>
 <p>The sequencer lets you switch between the eight Sounds and the Bypass Sound automatically.
 The order of the Sounds being activated is defined by a <strong>Pattern</strong>.
 The speed of the play head moving through the pattern is defined by the active clock source.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-General.png"/></p>
 <h2>Pattern</h2>
-<p>A Pattern is 8 steps long with each step being divided into 4 substeps, giving a sequence length of 32 positions.
+<p>A Pattern is 8 steps long with each step being divided into 4 substeps, resulting in a sequence length of 32 positions.
 Every position contains either a reference to one of the eight Sounds or to the Bypass Sound.
 Once the play head reaches a position with a different Sound, it activates that Sound.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Pattern.png"/></p>
@@ -338,7 +338,7 @@ Once the play head reaches a position with a different Sound, it activates that 
 <h2>Play &amp; Stop Sequencer</h2>
 <p>The sequencer is started and stopped by the <code>PLAY</code> button.</p>
 <p>When it is running, a transition to the next step is indicated by a blink on the <code>WRITE</code> LED.
-At the start of the sequence - when the first step is being activated - the <code>pattern</code> LEDs blink together once.</p>
+At the start of the sequence - when the first step is being activated - all <code>pattern</code> LEDs blink together once.</p>
 <p>Playback will always start from the first step.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Playing.png"/></p>
 </blockquote>
@@ -346,7 +346,7 @@ At the start of the sequence - when the first step is being activated - the <cod
 <blockquote>
 <h2>Change Pattern</h2>
 <p>You can select one of the four patterns<a data-footnote="17" data-title="4 patterns in this bank but 32 in total. See memory section."></a> with the <code>Pattern</code> buttons. The active pattern is indicated by the LED.
-When switching patterns while the sequencer is running, the position of the play head is not reset.</p>
+When patterns are switched while the sequencer is running, the position of the play head will not be reset.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Pattern-Change.png"/></p>
 </blockquote>
 <h2>Write and Live Mode</h2>
@@ -383,14 +383,14 @@ The current mode is indicated by the <code>WRITE</code> LED. When it’s off you
 The four blinks on every step indicate its <a href="#Substep_Editing">substeps</a>.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Write-Play.png"/></p>
 </blockquote>
-<p>To modify the pattern, you first have to select the a Sound before you can write it to a specific position.</p>
+<p>To modify the pattern you first have to select a Sound before you can write it to a specific position.</p>
 <blockquote>
 <h4>Select A Sound to Write</h4>
 <p>Press and hold down <code>SOUND</code>. The <code>1-8</code> LEDs and the <code>BYPASS</code> LED will now indicate the selected Sound.
 Press the corresponding button to change the selection.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Write-SelectSound.png"/></p>
 </blockquote>
-<p>There are two ways to edit a pattern: on the step level or on the substep level</p>
+<p>There are two ways to edit a pattern: on the step level or on the substep level.</p>
 <blockquote>
 <h4>Step Editing</h4>
 <p>The <code>1-8</code> LEDs now indicate in which steps the selected Sound is active.</p>
@@ -399,17 +399,17 @@ By shortly pressing the corresponding button, set all substeps to Bypass.</p>
 <p>When the LED is off, all substeps are set to a different Sound (another regular Sound or Bypass).
 By shortly pressing the button, you set all substeps to the selected Sound.</p>
 <p>Please note, that pressing a <code>1-8</code> button longer will let you enter substep editing mode.
-So releasing after a longer press does nothing.</p>
+So a long push alone does not trigger any action.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Write-Record.png"/></p>
 </blockquote>
 <!-- -->
 <blockquote>
 <h4>Substep Editing</h4>
-<p>To modify a pattern on the substep level, hold down the <code>1-8</code> button that holds the substep you want to edit.
+<p>To modify a pattern on the substep level hold down the <code>1-8</code> button that holds the substep you want to edit.
 After a short moment, the <code>PATTERN</code> LEDs will indicate the status of the substep.</p>
-<p>If a <code>pattern</code> LED is on, that substep is set to the selected Sound.
+<p>If a <code>pattern</code> LED is on, the corresponding substep is set to the selected Sound.
 Pressing the button will set the substep to Bypass.</p>
-<p>If a <code>pattern</code> LED is off, that substep is set to a Sound different from the selected one (can be a regular Sound or Bypass).
+<p>If a <code>pattern</code> LED is off, the corresponding substep is set to a Sound different from the selected one (can be a regular Sound or Bypass).
 Pressing the button will set it to the selected Sound.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Write-Record-Substep.png"/></p>
 </blockquote>
@@ -442,11 +442,11 @@ Before a clock signal is used for the sequencer it passes a clock divider/multip
 <blockquote>
 <h3>Change Clock Source</h3>
 <p>You can change the clock source by holding down <code>Fn</code> and pressing <code>Tap</code> to cycle through the three options: Tap Tempo / Analog Clock / MIDI Clock.</p>
-<p>While holding down <code>Fn</code> the current clock source is indicated by the three LEDs above <code>Freeze</code>/<code>Link</code>/<code>Sync</code> in the order indicated below the <code>Tap</code> button.</p>
+<p>While <code>Fn</code>is being pressed the current clock source is indicated by the three LEDs above <code>Freeze</code>/<code>Link</code>/<code>Sync</code> in the order indicated below the <code>Tap</code> button.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Clock-Select.png"/> </p>
-<p>At any time, the signal of the selected clock is shown on the <code>TAP</code> LED.</p>
+<p>The signal of the selected clock is permanently shown on the <code>TAP</code> LED.</p>
 </blockquote>
-<p>For each clock source, there are four divider options</p>
+<p>For each clock source there are four divider options.</p>
 <table>
 <thead>
 <tr>
@@ -465,26 +465,26 @@ Before a clock signal is used for the sequencer it passes a clock divider/multip
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>1 Substep per tap</td>
+<td>1 substep per tap</td>
 <td>2 substeps per clock</td>
 <td>4 substeps per quarter note</td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
-<td>1 Substep per 2 taps</td>
+<td>1 substep per 2 taps</td>
 <td>1 step per clock</td>
 <td>2 substeps per quarter note</td>
 </tr>
 <tr>
 <td><strong>D</strong></td>
-<td>1 Substep per 4 taps</td>
+<td>1 substep per 4 taps</td>
 <td>2 steps per clock</td>
 <td>1 substep per quarter note</td>
 </tr>
 </tbody>
 </table>
-<p>When changing the divider option, the sequencer will remain phase aligned with the input clock.</p>
-<p>The dividers are independent from each other.
+<p>When the divider option is being changed, the sequencer will remain phase-aligned with the input clock.</p>
+<p>The dividers are independent of each other.
 So you can for example have option B activated for the Tap Source and Option D for MIDI.</p>
 <p>The selected clock source and clock dividers will not be reset by power cycling.</p>
 <blockquote>
@@ -496,7 +496,7 @@ So you can for example have option B activated for the Tap Source and Option D f
 <h3>Tap Tempo</h3>
 <p>When Tap is selected as a clock source, the speed of the sequencer can be set by the <code>TAP</code> button.
 The average time between two button presses will be taken as the time for one step<a data-footnote="20" data-title="This refers to the clock speed before the divider, as indicated by the TAP LED."></a>.
-When hitting the button only every few steps, they are only interpreted as resync events.</p>
+If you hit the button only every few steps, this is interpreted as resync events only.</p>
 <p>Furthermore, Thyme can be used as MIDI clock master when running from Tap clock.</p>
 <h3>Manual Resync</h3>
 <p>With any of the clock sources selected, hitting <code>TAP</code> triggers a resync between the sequencer and the active clock source.
@@ -524,7 +524,7 @@ The detailed behavior is different for each clock source</p>
 </tbody>
 </table>
 <h1>Memory</h1>
-<p>Thyme contains static memory storage, used to save Sounds, Patterns and general settings.</p>
+<p>Thyme contains static memory storage used to save Sounds, Patterns and general settings.</p>
 <h2>Banks</h2>
 <p>As described in the previous sections, there are four Patterns which can each contain any of the eight Sounds.
 Together they form a memory <strong>Bank</strong>.</p>
@@ -564,7 +564,7 @@ The corresponding LED will blink once shortly to indicate success.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Memory-Clear-Pattern.png"/></p>
 </blockquote>
 <h2>Save</h2>
-<p>By default, all changes to Sounds and Patterns are discarded when turning the device off or when changing Banks, so they must be saved explicitly.</p>
+<p>By default all changes to Sounds and Patterns are discarded when the device is turned off or Banks are changed so they must be saved explicitly.</p>
 <blockquote>
 <h3>Save Bank</h3>
 <p>To save all changes in the current Bank (all eight Sounds and all 4 Patterns), hold down <code>Fn</code> and press <code>SOUND</code>.
@@ -593,31 +593,31 @@ The <code>1-8</code> LEDs will blink three times to indicate a successful operat
 <tbody>
 <tr>
 <td>Power input</td>
-<td>5,5mm/2,1mm barrel jack, 7-12V, positive center, 400mA</td>
+<td>5.5mm/2.1mm barrel jack, 7-12V, positive center, 400mA</td>
 </tr>
 <tr>
 <td>Audio Input</td>
-<td>6,3mm stereo or mono, 10k input impedance, -∞ to +20dB gain</td>
+<td>6.3mm stereo or mono, 10k input impedance, -∞ to +20dB gain</td>
 </tr>
 <tr>
 <td>Audio Output</td>
-<td>2x 6,3mm mono</td>
+<td>2x 6.3mm mono</td>
 </tr>
 <tr>
 <td>Headphone Output /w level adjust</td>
-<td>3,5mm stereo</td>
+<td>3.5mm stereo</td>
 </tr>
 <tr>
 <td>Footswitch Input</td>
-<td>3,5mm mono, attach passive switch that connects sleeve and tip</td>
+<td>3.5mm mono, attach passive switch that connects sleeve and tip</td>
 </tr>
 <tr>
 <td>CLK Input</td>
-<td>3,5mm mono, 100k input impedance, trigger threshold at ~0,5V, rising edge, maximum 5V</td>
+<td>3.5mm mono, 100k input impedance, trigger threshold at ~0.5V, rising edge, maximum 5V</td>
 </tr>
 <tr>
 <td>Control Voltage Input</td>
-<td>3,5mm stereo Tip: 100k input impedance, range 0-5V<br/>Ring: 5V voltage source for use with an expression pedal (passive voltage divider)</td>
+<td>3.5mm stereo Tip: 100k input impedance, range 0-5V<br/>Ring: 5V voltage source for use with an expression pedal (passive voltage divider)</td>
 </tr>
 <tr>
 <td>MIDI Input and Output</td>
@@ -650,7 +650,7 @@ The <code>1-8</code> LEDs will blink three times to indicate a successful operat
 </tr>
 <tr>
 <td><code>Fn</code> + <code>Robot Select</code> + <code>Sync</code></td>
-<td>Randomize both tape machine parameters and all Robots - but only in a limited range around current values</td>
+<td>Randomize both tape machine parameters and all Robots - but only within a limited range around current values</td>
 </tr>
 </tbody>
 </table>
@@ -666,8 +666,8 @@ The MIDI channel is persistently stored in the device’s memory.</p>
 <blockquote>
 <h4>Read MIDI Channel</h4>
 <p>When powering on the device, the knob LEDs will fade on and the current MIDI channel will be displayed by the <code>1-8</code> LEDs.</p>
-<p>When all LEDs are <strong>off</strong> but a single one is <strong>on</strong>, its position indicates a channel number from 1 to 8,
-when all are <strong>on</strong> but a single one <strong>off</strong>, its position indicates a channel number from 9 to 16.</p>
+<p>When all LEDs are <strong>off</strong> but a single one is <strong>on</strong>, its position indicates a channel number from 1 to 8.<br>
+When all are <strong>on</strong> but a single one <strong>off</strong>, its position indicates a channel number from 9 to 16.</br></p>
 </blockquote>
 <!-- -->
 <blockquote>
@@ -678,8 +678,8 @@ Channel 9-16: <code>Fn</code> and <code>1-8</code> buttons</br></p>
 <p>The new channel will be indicated right away, as described above.</p>
 </blockquote>
 <h4>Control Change</h4>
-<p>With Control Change Messages you can control all parameters of the selected Sound<a data-footnote="26" data-title="The hardware interface and MIDI work concurrently."></a>.<br>
-The data byte of any midi control message is interpreted in one of these ways.</br></p>
+<p>With Control Change Messages you can control all parameters of the selected Sound<a data-footnote="26" data-title="The hardware interface and MIDI work concurrently."></a>.<br/>
+The data byte of any midi control message is interpreted in one of these ways.</p>
 <table>
 <thead>
 <tr>
@@ -690,7 +690,7 @@ The data byte of any midi control message is interpreted in one of these ways.</
 <tbody>
 <tr>
 <td><strong>Scale</strong></td>
-<td>Maps the received value to a different <strong>range</strong>.<br/>In most cases, this will be the range you can set with the parameter’s knob. For example Volume from off to full.</td>
+<td>Maps the received value to a different <strong>range</strong>.<br/>In most cases, this will be the range you can set with the parameter knob. For example Volume from off to full.</td>
 </tr>
 <tr>
 <td><strong>Select</strong></td>
@@ -768,7 +768,7 @@ The data byte of any midi control message is interpreted in one of these ways.</
 <tr>
 <td>→ CC9</td>
 <td>Switch</td>
-<td>Robot Oscillator Synced</td>
+<td>Robot Sync</td>
 </tr>
 <tr>
 <td>CC10-CC18</td>
@@ -907,7 +907,7 @@ A history of active notes is tracked and once you release the latest note it fal
 <h4>Automations in Karplus-Strong-Configuration</h4>
 <p>Karplus-Strong is a synthesis technique based on physical modelling of a plucked string: A short delay and a filter are used to create a resonant loop (simulating the string) that can be excited with short bursts of noise (simulating the plucking).</p>
 <p>Using the fine delay, filter and feedback knob, Thyme can be configured for Karplus-Strong-Synthesis allowing separate control over pitch, timbre and decay time.</p>
-<p>To facilitate the use as a synthesizer, two parameter automations are implemented:</p>
+<p>To facilitate the use as a synthesizer two parameter automations are implemented:</p>
 <ol>
 <li>When receiving MIDI Note-On messages 9-127 the fine delay knob is set to create a resonant frequency equal to the frequency defined by the MIDI note<a data-footnote="28" data-title="This is only accurate on full tape speed."></a>.</li>
 <li>The decay time in Karplus-Strong configuration is depending both on the delay time and the amount of feedback. To keep the delay time constant for different MIDI notes, the feedback is reduced for low notes. This feature can be enabled/disabled by CC89</li>
@@ -927,7 +927,7 @@ So when switching to MIDI clock source, the sequencer will be set to the positio
 <tbody>
 <tr>
 <td><strong>Tap</strong></td>
-<td>Start, Stop and Clock messages are generated according to the Tap Tempo and the play status of the sequencer.<br/>This only makes sense if there is no other master device up the bus. So as soon as any realtime message is received, Thyme senses a conflict and stops generating realtime messages. You can reset this and start sending messages again, by first selecting a different clock source and then re-selecting Tap. Received realtime messages are not processed.</td>
+<td>Start, Stop and Clock messages are generated according to the Tap Tempo and the play status of the sequencer.<br/>This only makes sense if there is no other master device up the bus. So as soon as any realtime message is received, Thyme senses a conflict and stops generating realtime messages. You can reset this and start sending messages again by first selecting a different clock source and then re-selecting Tap. Received realtime messages are not processed.</td>
 </tr>
 <tr>
 <td><strong>Analog Clock</strong></td>
@@ -940,7 +940,7 @@ So when switching to MIDI clock source, the sequencer will be set to the positio
 </tbody>
 </table>
 <h2>Bootloader</h2>
-<p>The device contains multiple microcontrollers, whose firmwares might be updated in the future.
+<p>The device contains multiple microcontrollers whose firmwares might be updated in the future.
 Flashing firmware images can be done via MIDI, so the only hardware required is a computer, a MIDI adapter and a MIDI cable.</p>
 <p>The firmware images are packed into multiple SysEx messages, which are unpacked by the device bootloader and written to the internal flash memory.</p>
 <p>To upload a new firmware, you first need to boot the device into Bootloader mode.</p>
@@ -950,7 +950,7 @@ Flashing firmware images can be done via MIDI, so the only hardware required is 
 You will see an animation on the <code>1-8</code> LEDs indicating that you are now in bootloader mode and the device is ready to receive SysEx messages.</p>
 </blockquote>
 <p>As the bootloader needs some time to process the SysEx messages, they may not be sent too fast by the computer.
-To ensure the correct timing, there are two different methods</p>
+There are two different methods to ensure the correct timing.</p>
 <h3>MIDI file</h3>
 <p>Placing SysEx messages at certain positions in a MIDI file allows to define their timing.
 All you have to do is send<a data-footnote="29" data-title="Please note, that ‘sending’ the .mid file is something else than ‘playing it back’, which usually means interpreting it and generating audio from it."></a> that MIDI file through the port Thyme is connected to.</p>
@@ -964,13 +964,13 @@ select the MIDI port Thyme is connect to and start the flashing.</p>
 This method is generally slower and more complicated so we recommend this only if you have experience with this workflow.</p>
 <p>On OSX you can use <a href="https://www.snoize.com/SysExLibrarian/">SysExLibrarian</a>,
 on Windows go with <a href="http://www.midiox.com/">MIDIOX</a>.</p>
-<p>For every SysEx file you send, the single parameter you have to specify is the pause between messages.
+<p>For every SysEx file you send the single parameter you have to specify is the pause between messages.
 The correct value depends on the specific SysEx file and will be published together with it on our website.</p>
 <h3>General Information</h3>
 <p>Flashing a firmware can take up to two minutes.
 Do not interrupt data or power connection during flashing.
-But don't be afraid, you cannot destroy your device like this.
-The bootloader will remain accessible and it's always possible to retry.</p>
+But don't be afraid, you cannot destroy your device this way.
+The bootloader will remain accessible and retry is always possible.</p>
 <p>When a new firmware is being written by the bootloader, the device will indicate this by some LEDs.
 The exact pattern depends on which chips are flashed in which order.
 Please refer to the information that will be provided with the firmware file.</p>
@@ -979,7 +979,7 @@ Please refer to the information that will be provided with the firmware file.</p
 These tests are also present in the production firmware so you can run them yourself if you think your unit might be faulty.</p>
 <blockquote>
 <h3>Enter Test Mode</h3>
-<p>To run tests, you have to boot your device into a dedicated test mode by holding down all four <code>pattern</code> buttons while powering up the device.
+<p>To run tests you have to boot your device into a dedicated test mode by holding down all four <code>pattern</code> buttons while powering up the device.
 The four <code>pattern</code> LEDs indicate that you have entered test mode.</p>
 <p>There are six different hardware tests which can be run in a row (to perform a general check) or individually (to track down an error).</p>
 </blockquote>
@@ -1007,14 +1007,14 @@ They are displayed before the general indication.</p>
 <tr>
 <td><strong>1 </strong></td>
 <td>Knobs</td>
-<td>All knob LEDs turn on. Move a knob to both extremes to turn it off. When all are off, test is passed</td>
+<td>All knob LEDs turn on. Move a knob to both extremes to turn the LED off. When this is done for all knobs, the test succeeds.</td>
 <td>No cross influence between knobs</td>
 <td>None</td>
 </tr>
 <tr>
 <td><strong>2</strong></td>
 <td>Knob LEDs</td>
-<td>Knobs LEDs fade in one after another</td>
+<td>Knob LEDs fade in one after another</td>
 <td>Smooth Fading</td>
 <td>None</td>
 </tr>
@@ -1023,7 +1023,7 @@ They are displayed before the general indication.</p>
 <td>Buttons</td>
 <td>Press button closest to the LED that lights up. Pressing the wrong button is an error. The last button is the footswitch.</td>
 <td>None</td>
-<td>LED closest to unexpected button is lit up.</td>
+<td>LED closest to button that trigged unpectedly is lit up.</td>
 </tr>
 <tr>
 <td><strong>4</strong></td>

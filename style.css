@@ -192,6 +192,8 @@ hr {
   font-size: 70%;
   margin-left: 2px;
   font-weight: 800;
+  display: inline-block;
+  margin-top: -10px;
 }
 
 #content a[data-footnote] {
