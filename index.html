@@ -415,7 +415,7 @@ Pressing the button will set it to the selected Sound.</p>
 </blockquote>
 <h2>Clock Source</h2>
 <p>The sequencer can run from one of the three different clock sources.
-Before a clock signal is used for the sequencer it passes a clock divider/multiplier.</p>
+Before a clock signal is used for the sequencer it passes a clock divider.</p>
 <p><img class="image-process-small" src="images/derivatives/small/thyme_Sequencer-Clock-General.png"/> </p>
 <table>
 <thead>
@@ -452,33 +452,33 @@ Before a clock signal is used for the sequencer it passes a clock divider/multip
 <tr>
 <th></th>
 <th>Tap</th>
-<th>Analog Clock<a data-footnote="19" data-title="The clock is not interpolated but intermediate (sub)steps are skipped when using divider B to D."></a></th>
+<th>Analog Clock</th>
 <th>MIDI</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>A</strong></td>
-<td>2 substeps per tap</td>
-<td>1 substep per clock</td>
+<td>2 steps per tap</td>
+<td>1 substep per edge</td>
 <td>8 substeps per quarter note</td>
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>1 substep per tap</td>
-<td>2 substeps per clock</td>
+<td>1 step per tap</td>
+<td>1 substep per 2 edges</td>
 <td>4 substeps per quarter note</td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
-<td>1 substep per 2 taps</td>
-<td>1 step per clock</td>
+<td>2 substeps per tap</td>
+<td>1 substep per 4 edges</td>
 <td>2 substeps per quarter note</td>
 </tr>
 <tr>
 <td><strong>D</strong></td>
-<td>1 substep per 4 taps</td>
-<td>2 steps per clock</td>
+<td>1 substep per tap</td>
+<td>1 substep per 8 edges</td>
 <td>1 substep per quarter note</td>
 </tr>
 </tbody>
@@ -495,7 +495,7 @@ So you can for example have option B activated for the Tap Source and Option D f
 </blockquote>
 <h3>Tap Tempo</h3>
 <p>When Tap is selected as a clock source, the speed of the sequencer can be set by the <code>TAP</code> button.
-The average time between two button presses will be taken as the time for one step<a data-footnote="20" data-title="This refers to the clock speed before the divider, as indicated by the TAP LED."></a>.
+The average time between two button presses will be taken as the time for one step<a data-footnote="19" data-title="This refers to the clock speed before the divider, as indicated by the TAP LED."></a>.
 If you hit the button only every few steps, this is interpreted as resync events only.</p>
 <p>Furthermore, Thyme can be used as MIDI clock master when running from Tap clock.</p>
 <h3>Manual Resync</h3>
@@ -511,7 +511,7 @@ The detailed behavior is different for each clock source</p>
 <tbody>
 <tr>
 <td><strong>Tap</strong></td>
-<td>Set both input clock and sequencer to the closest whole step.<a data-footnote="21" data-title="Realized by slowing down or speeding up certain clock domains. Any device down the bus running as MIDI slave from Thyme’s MIDI clock output will stay in sync with Thyme’s sequencer."></a> This is triggered also during regular taps.</td>
+<td>Set both input clock and sequencer to the closest whole step.<a data-footnote="20" data-title="Realized by slowing down or speeding up certain clock domains. Any device down the bus running as MIDI slave from Thyme’s MIDI clock output will stay in sync with Thyme’s sequencer."></a> This is triggered also during regular taps.</td>
 </tr>
 <tr>
 <td><strong>Analog Clock</strong></td>
@@ -519,7 +519,7 @@ The detailed behavior is different for each clock source</p>
 </tr>
 <tr>
 <td><strong>MIDI</strong></td>
-<td>Activate the first step on the next MIDI clock message. <a data-footnote="22" data-title="This can be used to sync to a MIDI clock that does not provide Start/Stop messages. But it can also cause desyncronization. Use with caution."></a></td>
+<td>Activate the first step on the next MIDI clock message. <a data-footnote="21" data-title="This can be used to sync to a MIDI clock that does not provide Start/Stop messages. But it can also cause desyncronization. Use with caution."></a></td>
 </tr>
 </tbody>
 </table>
@@ -528,7 +528,7 @@ The detailed behavior is different for each clock source</p>
 <h2>Banks</h2>
 <p>As described in the previous sections, there are four Patterns which can each contain any of the eight Sounds.
 Together they form a memory <strong>Bank</strong>.</p>
-<p>There are eight of these independent<a data-footnote="23" data-title="Sounds of one bank cannot be used in a pattern from a different bank."></a> Banks.
+<p>There are eight of these independent<a data-footnote="22" data-title="Sounds of one bank cannot be used in a pattern from a different bank."></a> Banks.
 Please note, that although switching Banks is usually fast it can temporarily disturb syncing of delay time and oscillator Robots.
 The sound processing however is guaranteed to be glitch-free.</p>
 <blockquote>
@@ -538,12 +538,12 @@ Press one of the <code>1-8</code> buttons to switch the bank.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Memory-ChangeBank.png"/></p>
 </blockquote>
 <h2>Copy and Paste</h2>
-<p>To quickly create Sounds, you can copy and paste them to and from different Sound slots.<a data-footnote="24" data-title="The copy that is taken is a true copy, meaning you can modify the Sound the copy was made from without modifying the copy itself."></a></p>
+<p>To quickly create Sounds, you can copy and paste them to and from different Sound slots.<a data-footnote="23" data-title="The copy that is taken is a true copy, meaning you can modify the Sound the copy was made from without modifying the copy itself."></a></p>
 <p>Also you can copy and paste between Banks.</p>
 <blockquote>
 <h3>Copy and Paste a Sound</h3>
 <p>To copy the active Sound, hold down <code>Fn</code> and press <code>WRITE</code>.
-To paste the stored copy top the active Sound, hold down <code>Fn</code> and press <code>PLAY</code>.<a data-footnote="25" data-title="After performing Copy or Paste, all other Fn combinations are only accessible if you release and press again the Fn button. This is done to avoid accidentally changing banks."></a></p>
+To paste the stored copy top the active Sound, hold down <code>Fn</code> and press <code>PLAY</code>.<a data-footnote="24" data-title="After performing Copy or Paste, all other Fn combinations are only accessible if you release and press again the Fn button. This is done to avoid accidentally changing banks."></a></p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Memory-CopyPaste.png"/></p>
 </blockquote>
 <h2>Clear Sound or Pattern</h2>
@@ -678,7 +678,7 @@ Channel 9-16: <code>Fn</code> and <code>1-8</code> buttons</br></p>
 <p>The new channel will be indicated right away, as described above.</p>
 </blockquote>
 <h4>Control Change</h4>
-<p>With Control Change Messages you can control all parameters of the selected Sound<a data-footnote="26" data-title="The hardware interface and MIDI work concurrently."></a>.<br/>
+<p>With Control Change Messages you can control all parameters of the selected Sound<a data-footnote="25" data-title="The hardware interface and MIDI work concurrently."></a>.<br/>
 The data byte of any midi control message is interpreted in one of these ways.</p>
 <table>
 <thead>
@@ -868,7 +868,7 @@ The data byte of any midi control message is interpreted in one of these ways.</
 <tr>
 <td>CC125</td>
 <td>Trigger</td>
-<td>Dump the settings of the current Sound to MIDI output<a data-footnote="27" data-title="This means sending CC1-CC63 and CC68-CC88 - according to the settings of the current Sound - on the current input channel."></a></td>
+<td>Dump the settings of the current Sound to MIDI output<a data-footnote="26" data-title="This means sending CC1-CC63 and CC68-CC88 - according to the settings of the current Sound - on the current input channel."></a></td>
 </tr>
 </tbody>
 </table>
@@ -909,7 +909,7 @@ A history of active notes is tracked and once you release the latest note it fal
 <p>Using the fine delay, filter and feedback knob, Thyme can be configured for Karplus-Strong-Synthesis allowing separate control over pitch, timbre and decay time.</p>
 <p>To facilitate the use as a synthesizer two parameter automations are implemented:</p>
 <ol>
-<li>When receiving MIDI Note-On messages 9-127 the fine delay knob is set to create a resonant frequency equal to the frequency defined by the MIDI note<a data-footnote="28" data-title="This is only accurate on full tape speed."></a>.</li>
+<li>When receiving MIDI Note-On messages 9-127 the fine delay knob is set to create a resonant frequency equal to the frequency defined by the MIDI note<a data-footnote="27" data-title="This is only accurate on full tape speed."></a>.</li>
 <li>The decay time in Karplus-Strong configuration is depending both on the delay time and the amount of feedback. To keep the delay time constant for different MIDI notes, the feedback is reduced for low notes. This feature can be enabled/disabled by CC89</li>
 </ol>
 <h3>Realtime Messages</h3>
@@ -953,8 +953,8 @@ You will see an animation on the <code>1-8</code> LEDs indicating that you are n
 There are two different methods to ensure the correct timing.</p>
 <h3>MIDI file</h3>
 <p>Placing SysEx messages at certain positions in a MIDI file allows to define their timing.
-All you have to do is send<a data-footnote="29" data-title="Please note, that ‘sending’ the .mid file is something else than ‘playing it back’, which usually means interpreting it and generating audio from it."></a> that MIDI file through the port Thyme is connected to.</p>
-<p>Unfortunately there are hardly any<a data-footnote="30" data-title="On Linux you can use aplaymidi from the commandline."></a> applications that do this fairly simple job so we wrote one ourselves.
+All you have to do is send<a data-footnote="28" data-title="Please note, that ‘sending’ the .mid file is something else than ‘playing it back’, which usually means interpreting it and generating audio from it."></a> that MIDI file through the port Thyme is connected to.</p>
+<p>Unfortunately there are hardly any<a data-footnote="29" data-title="On Linux you can use aplaymidi from the commandline."></a> applications that do this fairly simple job so we wrote one ourselves.
 It can be downloaded for Linux, MacOS and Windows <a href="">here</a>.</p>
 <p>The usage is very straightforward:
 Open the downloaded MIDI file containing the firmware update,
