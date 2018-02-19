@@ -61,6 +61,8 @@ function updateTOC() {
     // remember if active heading has to be reset
     var changedActive = false;
 
+    console.log("Scrolled", relativeMovement);
+
     // scrolling up
     if (relativeMovement < 0) {
       while(activeHeadingIndex >= 1 && allHeadings[activeHeadingIndex].offset().top > pointerYOffset) {
@@ -76,7 +78,7 @@ function updateTOC() {
     }
 
     // scrolling down
-    else {
+    if (relativeMovement > 0) {
       while(activeHeadingIndex < allHeadings.length-1 && allHeadings[activeHeadingIndex+1].offset().top <= pointerYOffset) {
         // go to next heading
         activeHeadingIndex = activeHeadingIndex + 1;
@@ -100,6 +102,8 @@ function updateTOC() {
 }
 
 function setEntryActive(index) {
+
+  console.log("Set active", index);
 
   allTOCHeadings[oldActiveHeadingIndex].removeClass('active');
   oldActiveHeadingIndex = activeHeadingIndex;
