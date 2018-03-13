@@ -1007,42 +1007,49 @@ They are displayed before the general indication.</p>
 <tr>
 <td><strong>1 </strong></td>
 <td>Knobs</td>
-<td>All knob LEDs turn on. Move a knob to both extremes to turn the LED off. When this is done for all knobs, the test succeeds.</td>
-<td>No cross influence between knobs</td>
+<td>Set all knobs together at a set of positions (off, center, full). Once all reach the target position the test proceeds to the next position. The knob LEDs indicate when a knob has reached its target position.</td>
+<td>Check if the knobs reach the middle position only when they are set halfway to assure they have the correct curve</td>
 <td>None</td>
 </tr>
 <tr>
 <td><strong>2</strong></td>
 <td>Knob LEDs</td>
-<td>Knob LEDs fade in one after another</td>
+<td>Knob LEDs fade in one after another.</td>
 <td>Smooth Fading</td>
 <td>None</td>
 </tr>
 <tr>
 <td><strong>3</strong></td>
 <td>Buttons</td>
-<td>Press button closest to the LED that lights up. Pressing the wrong button is an error. The last button is the footswitch.</td>
+<td>Press button closest to the LED that lights up. Pressing the wrong button is an error.</td>
 <td>None</td>
-<td>LED closest to button that trigged unpectedly is lit up.</td>
+<td>LED closest to button that trigged unexpectedly is lit up.</td>
 </tr>
 <tr>
 <td><strong>4</strong></td>
-<td>EEPROM</td>
-<td>All bytes of EEPROM are written to, read back and compared with expected value. Original data is preserved. Shows progress bar</td>
-<td>None</td>
+<td>External</td>
+<td>Connect external testing utility to test CV, analog clock and footswitch. Set in this order: CV to center - 5 Clock edges - CV to off - 5 Footswitch presses - CV to full</td>
+<td>Unit should not react on its own</td>
 <td>None</td>
 </tr>
 <tr>
 <td><strong>5</strong></td>
-<td>Bootloader</td>
-<td>Tries to enter bootloader mode on both boards.</td>
+<td>EEPROM</td>
+<td>All bytes of EEPROM are written to, read back and compared with expected value. Original data is preserved. Shows progress bar.</td>
 <td>None</td>
 <td>None</td>
 </tr>
 <tr>
 <td><strong>6</strong></td>
+<td>Bootloader</td>
+<td>Tries to place lower board into bootloader mode.</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
 <td>MIDI</td>
-<td>Connect MIDI cable between input and output. Devices sends data and checks if it can receive it</td>
+<td>Connect MIDI cable between input and output. Devices sends random data and checks if it can receive it.</td>
 <td>None</td>
 <td>None</td>
 </tr>
