@@ -110,6 +110,7 @@ a {
 
 #content a {
   border-bottom: 5px solid #ccc;
+  line-height: 110%;
   display: inline-block;
 }
 
