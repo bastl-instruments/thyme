@@ -523,6 +523,21 @@ The detailed behavior is different for each clock source</p>
 </tr>
 </tbody>
 </table>
+<h2>Parameter Overwrite</h2>
+<p>While the sequencer is running and switching between different sounds, it is possible to change the parameters of the active sound by tweaking the knobs.
+Due to knob freezing this is only useful if the sequencer is running rather slow.</p>
+<p>Another performative option is to manually overwrite one or multiple parameters.
+This means they will not be controlled anymore by the sounds of the pattern but directly by their knob.</p>
+<blockquote>
+<h3>Overwrite a Parameter</h3>
+<p>Parameter Overwrite is only active as long as the sequencer is running and you hold down <code>SOUND</code>.
+To start overwriting a parameter, twist the corresponding knob. The value will start tracking the knob movement.
+It is possible to overwrite multiple parameters at the same time.</p>
+<p><img class="image-process-main" src="images/derivatives/main/thyme_Parameter-Overwrite.png"/></p>
+<p>To stop all parameter overwrites, release <code>SOUND</code>.
+The sequenced sounds will take back control over all parameters.
+Disabling only a single parameter overwrite while keeping the others active is not possible.</p>
+</blockquote>
 <h1>Memory</h1>
 <p>Thyme contains static memory storage used to save Sounds, Patterns and general settings.</p>
 <h2>Banks</h2>
@@ -939,10 +954,16 @@ So when switching to MIDI clock source, the sequencer will be set to the positio
 </tr>
 </tbody>
 </table>
-<h2>Bootloader</h2>
+<h2>Firmware Updates</h2>
 <p>The device contains multiple microcontrollers whose firmwares might be updated in the future.
 Flashing firmware images can be done via MIDI, so the only hardware required is a computer, a MIDI adapter and a MIDI cable.</p>
-<p>The firmware images are packed into multiple SysEx messages, which are unpacked by the device bootloader and written to the internal flash memory.</p>
+<blockquote>
+<h3>Determine Firmware Version</h3>
+<p>During startup, the firmware version is displayed on the <code>PATTERN</code> LEDs.</p>
+<p>Each firmware release has an ID that is displayed on the LEDs in binary format.
+For example <code>A</code> and <code>C</code> being on would represent ID 5.</p>
+</blockquote>
+<p>The firmware updates are packed into multiple SysEx messages, which are unpacked by the device bootloader and written to the internal flash memory.</p>
 <p>To upload a new firmware, you first need to boot the device into Bootloader mode.</p>
 <blockquote>
 <h3>Enter Bootloader Mode</h3>
@@ -950,30 +971,18 @@ Flashing firmware images can be done via MIDI, so the only hardware required is 
 You will see an animation on the <code>1-8</code> LEDs indicating that you are now in bootloader mode and the device is ready to receive SysEx messages.</p>
 </blockquote>
 <p>As the bootloader needs some time to process the SysEx messages, they may not be sent too fast by the computer.
-There are two different methods to ensure the correct timing.</p>
-<h3>MIDI file</h3>
-<p>Placing SysEx messages at certain positions in a MIDI file allows to define their timing.
+To ensure this, we placed the SysEx messages at certain positions in a regular MIDI file.
 All you have to do is send<a data-footnote="28" data-title="Please note, that ‘sending’ the .mid file is something else than ‘playing it back’, which usually means interpreting it and generating audio from it."></a> that MIDI file through the port Thyme is connected to.</p>
 <p>Unfortunately there are hardly any<a data-footnote="29" data-title="On Linux you can use aplaymidi from the commandline."></a> applications that do this fairly simple job so we wrote one ourselves.
 It can be downloaded for Linux, MacOS and Windows <a href="https://github.com/bastl-instruments/sysex-playback/releases/latest">here</a>.</p>
-<p>The usage is very straightforward:
-Open the downloaded MIDI file containing the firmware update,
-select the MIDI port Thyme is connect to and start the flashing.</p>
-<h3>Pure SysEx and Manual Timing</h3>
-<p>Another way to go is using the pure sysex messages without timing information and specifying the delay between messages manually.
-This method is generally slower and more complicated so we recommend this only if you have experience with this workflow.</p>
-<p>On OSX you can use <a href="https://www.snoize.com/SysExLibrarian/">SysExLibrarian</a>,
-on Windows go with <a href="http://www.midiox.com/">MIDIOX</a>.</p>
-<p>For every SysEx file you send the single parameter you have to specify is the pause between messages.
-The correct value depends on the specific SysEx file and will be published together with it on our website.</p>
-<h3>General Information</h3>
-<p>Flashing a firmware can take up to two minutes.
+<blockquote>
+<h3>Send Firmware Update</h3>
+<p>Start the Sysex Playback app. Load the MIDI file containing the firmware update,
+select the MIDI port Thyme is connect to and start flashing.</p>
+<p>The whole process will take over two minutes.
 Do not interrupt data or power connection during flashing.
-But don't be afraid, you cannot destroy your device this way.
-The bootloader will remain accessible and retry is always possible.</p>
-<p>When a new firmware is being written by the bootloader, the device will indicate this by some LEDs.
-The exact pattern depends on which chips are flashed in which order.
-Please refer to the information that will be provided with the firmware file.</p>
+Doing so may render your device unusable.</p>
+</blockquote>
 <h2>Hardware Tests</h2>
 <p>To test devices in our production the firmware contains self-tests.
 These tests are also present in the production firmware so you can run them yourself if you think your unit might be faulty.</p>
@@ -1059,6 +1068,26 @@ They are displayed before the general indication.</p>
 <td>Whole <a href="#Memory">Memory</a> is formatted. Sounds, Patterns and Persistent Settings are reset</td>
 <td>None</td>
 <td>None</td>
+</tr>
+</tbody>
+</table>
+<h2>Changelog</h2>
+<p>List of major changes made to this manual</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9. April 2018</td>
+<td>Initial release</td>
+</tr>
+<tr>
+<td>11. May 2018</td>
+<td>Improved firmware update section<br/>Added Parameter Overwrite section<br/>Added display firmware version</td>
 </tr>
 </tbody>
 </table>

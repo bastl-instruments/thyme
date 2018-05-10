@@ -15,28 +15,37 @@
 <li>The <a href="https://bastl-instruments.github.io/thyme/downloads/thyme_short_manual.pdf">Short Manual</a> tells you the minimum you need to know to get started. A printed version is shipped with the device.</li>
 <li>The <a href="https://bastl-instruments.github.io/thyme/manual.html">Full Manual</a> explains the core concepts and all the features in detail. It is only available online.</li>
 </ul>
-<h2>Firmware Update</h2>
+<h2>Firmware Updates</h2>
 <p>Firmware updates can be installed via MIDI as <a href="https://bastl-instruments.github.io/thyme/manual.html#Bootloader">described in the manual</a>. You will need to download our <a href="https://github.com/bastl-instruments/sysex-playback">Sysex-Playback App</a> which is available for <a href="https://github.com/bastl-instruments/sysex-playback/releases/latest">Linux, MacOS and Windows</a>.</p>
+<p>To find out what version your device is currently running on, compare the <a href="https://bastl-instruments.github.io/thyme/manual.html#Determine_Firmware_Version">displayed ID</a> with the ones from this table.</p>
 <table>
 <thead>
 <tr>
 <th>Version</th>
+<th>ID</th>
 <th>Release Date</th>
-<th>Comment</th>
 <th>Download</th>
+<th>Changes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>1.0</code></td>
+<td>0</td>
 <td>April 2018</td>
-<td>Initial Version</td>
 <td><a href="https://bastl-instruments.github.io/thyme/downloads/thyme_firmware_1.0.mid">MIDI File</a></td>
+<td>Initial Version</td>
 </tr>
-</tbody>
-</table>
+<tr>
+<td><code>1.0.2</code></td>
+<td>1</td>
+<td>Mai 2018</td>
+<td><a href="https://bastl-instruments.github.io/thyme/downloads/thyme_firmware_1.0.2.mid">MIDI File</a></td>
+<td><b>Fixed Bug</b>: Crash when enabling SYNC while CLK or MIDI is selected as the clock source<br/><b>Fixed Bug</b>: Main delay would jump to zero if COARSE and FINE are set to full<br/><b>Fixed Bug</b>: Robot RATE and SHAPE not frozen properly when selecting a different robot or changing the MODE</td></tr></tbody></table></div></body></html>
+
+
+
 <hr/>
 <p>Copyright: Bastl Instruments - <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
-</div>
-</body>
-</html>
+
+
