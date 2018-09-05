@@ -56,7 +56,7 @@ The knobs symbolize parameters that can be manipulated.</p>
 </tr>
 <tr>
 <td>Delay Coarse and Delay Fine</td>
-<td>Control the position of the main read head in relation to the write head. The coarse knob ranges from zero to 2.7 seconds, the fine one just goes up to a few milliseconds. They both add up.</td>
+<td>Control the position of the main read head in relation to the write head. With full tape speed the coarse knob ranges from zero to 2.7 seconds, the fine one just goes up to a few milliseconds. They both add up. If you lower the tape speed you can achieve longer delay times but with more digital tape character.</td>
 </tr>
 <tr>
 <td>Spacing</td>
@@ -596,7 +596,7 @@ The <code>1-8</code> LEDs will blink three times to indicate a successful operat
 <li>Mono Input Mode on/off</li>
 <li>MIDI Channel</li>
 </ul>
-<h1>Connectivity</h1>
+<h1>Specifications</h1>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Connectivity.png"/> </p>
 <table>
 <thead>
@@ -637,6 +637,10 @@ The <code>1-8</code> LEDs will blink three times to indicate a successful operat
 <tr>
 <td>MIDI Input and Output</td>
 <td>Standard DIN connectors</td>
+</tr>
+<tr>
+<td>Maximum Delay Length</td>
+<td>2.7s @ 48kHz - 108s @ 1,2kHz</td>
 </tr>
 <tr>
 <td>Dimensions</td>
@@ -961,7 +965,7 @@ Flashing firmware images can be done via MIDI, so the only hardware required is 
 <h3>Determine Firmware Version</h3>
 <p>During startup, the firmware version is displayed on the <code>PATTERN</code> LEDs.</p>
 <p>Each firmware release has an ID that is displayed on the LEDs in binary format.
-For example <code>A</code> and <code>C</code> being on would represent ID 5.</p>
+For example ID 0 would be indicated by all LEDs off, ID 1 by only <code>A</code> on, ID 2 by only <code>B</code>, ID 3 by <code>A</code> and <code>B</code> and so on.</p>
 </blockquote>
 <p>The firmware updates are packed into multiple SysEx messages, which are unpacked by the device bootloader and written to the internal flash memory.</p>
 <p>To upload a new firmware, you first need to boot the device into Bootloader mode.</p>
@@ -1088,6 +1092,10 @@ They are displayed before the general indication.</p>
 <tr>
 <td>11. May 2018</td>
 <td>Improved firmware update section<br/>Added Parameter Overwrite section<br/>Added display firmware version</td>
+</tr>
+<tr>
+<td>5. September 2018</td>
+<td>Added more detailed specifications about maximum delay length<br/>Improved description of firmware version display</td>
 </tr>
 </tbody>
 </table>
