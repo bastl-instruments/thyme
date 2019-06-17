@@ -122,7 +122,7 @@ You can activate them independently from each other with their dedicated buttons
 This time can be chosen freely or - with the <code>SYNC</code> switch activated - quantized to rhythmical intervals (eight-notes, quarters,..).
 The intervals are derived from the tempo of the sequencer.
 See the <a href="#Clock_Source">sequencer section</a> for how to set this tempo.
-The possible multiplications / divisions of the tempo are: 1/32, 1/16, 1/8, 1/4, 1/3, 1/2, 1, 2, 3, 4, 6, 8, 12, 16, 32, 48, 56 and so forth.
+The possible multiplications / divisions of the tempo are: 1/32, 1/16, 1/8, 1/4, 1/3, 1/2, 1, 4/3, 2, 3, 4, 6, 8, 12, 16, 32, 48, 56 and so forth.
 Sync is also active for extra read heads - unless this is <a href="#Extended_Parameter_Settings">deactivated</a>.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Delay-Sync.png"/></p>
 <h3>Delay Link</h3>
@@ -285,7 +285,7 @@ All pictures show oscillators for the same fixed Rate and variable Shape.</p>
 <p><img class="image-process-small" src="images/derivatives/small/thyme_Robot-Sync.png"/></p>
 <blockquote>
 <h3>Set Robot Sync</h3>
-<p>Press <code>Robot Sync</code> to enable/disable syncing for the selected Robot. The status is indicated by the LED. The possible multiplications / divisions of the tempo are: 1/32, 1/16, 1/8, 1/4, 1/3, 1/2, 1, 2, 3, 4, 6, 8, 12, 16, 32, 48, 56 and so forth.</p>
+<p>Press <code>Robot Sync</code> to enable/disable syncing for the selected Robot. The status is indicated by the LED. The possible multiplications / divisions of the tempo are: 1/32, 1/16, 1/8, 1/4, 1/3, 1/2, 1, 4/3, 2, 3, 4, 6, 8, 12, 16, 32, 48, 56 and so forth.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Robot-Sync-Set.png"/></p>
 </blockquote>
 <h2>Robot Polarity</h2>
@@ -385,7 +385,7 @@ The four blinks on every step indicate its <a href="#Substep_Editing">substeps</
 </blockquote>
 <p>To modify the pattern you first have to select a Sound before you can write it to a specific position.</p>
 <blockquote>
-<h4>Select A Sound to Write</h4>
+<h4>Select a Sound to Write</h4>
 <p>Press and hold down <code>SOUND</code>. The <code>1-8</code> LEDs and the <code>BYPASS</code> LED will now indicate the selected Sound.
 Press the corresponding button to change the selection.</p>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Sequencer-Write-SelectSound.png"/></p>
@@ -595,6 +595,7 @@ The <code>1-8</code> LEDs will blink three times to indicate a successful operat
 <li>Selected Bank</li>
 <li>Mono Input Mode on/off</li>
 <li>MIDI Channel</li>
+<li>MIDI Start/Stop messages interpreted or ignored</li>
 </ul>
 <h1>Specifications</h1>
 <p><img class="image-process-main" src="images/derivatives/main/thyme_Connectivity.png"/> </p>
@@ -649,6 +650,27 @@ The <code>1-8</code> LEDs will blink three times to indicate a successful operat
 </tbody>
 </table>
 <h1>Appendix</h1>
+<h2>Jump to Half/Double Tape Speed</h2>
+<p>To halve or double the current tape speed<a data-footnote="25" data-title="The tape speed knob has a non-linear curve, so half/double the tape speed does not correspond to half/double the knob position."></a> (and therefore change the pitch in many secenarios by one octave) you can use these button combinations:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Fn</code> + <code>Freeze</code></td>
+<td>Set tape speed to half the current value</td>
+</tr>
+<tr>
+<td><code>Fn</code> + <code>Sync</code></td>
+<td>Set tape speed to double the current value</td>
+</tr>
+</tbody>
+</table>
+<p>These actions have no effect if the desired tape speed is beyond the range that can be set by the knob alone.</p>
 <h2>Randomize</h2>
 <p>You can randomly set all parameters of the current Sound in three ways</p>
 <table>
@@ -697,7 +719,7 @@ Channel 9-16: <code>Fn</code> and <code>1-8</code> buttons</br></p>
 <p>The new channel will be indicated right away, as described above.</p>
 </blockquote>
 <h4>Control Change</h4>
-<p>With Control Change Messages you can control all parameters of the selected Sound<a data-footnote="25" data-title="The hardware interface and MIDI work concurrently."></a>.<br/>
+<p>With Control Change Messages you can control all parameters of the selected Sound<a data-footnote="26" data-title="The hardware interface and MIDI work concurrently."></a>.<br/>
 The data byte of any midi control message is interpreted in one of these ways.</p>
 <table>
 <thead>
@@ -887,7 +909,7 @@ The data byte of any midi control message is interpreted in one of these ways.</
 <tr>
 <td>CC125</td>
 <td>Trigger</td>
-<td>Dump the settings of the current Sound to MIDI output<a data-footnote="26" data-title="This means sending CC1-CC63 and CC68-CC88 - according to the settings of the current Sound - on the current input channel."></a></td>
+<td>Dump the settings of the current Sound to MIDI output<a data-footnote="27" data-title="This means sending CC1-CC63 and CC68-CC88 - according to the settings of the current Sound - on the current input channel."></a></td>
 </tr>
 </tbody>
 </table>
@@ -928,7 +950,7 @@ A history of active notes is tracked and once you release the latest note it fal
 <p>Using the fine delay, filter and feedback knob, Thyme can be configured for Karplus-Strong-Synthesis allowing separate control over pitch, timbre and decay time.</p>
 <p>To facilitate the use as a synthesizer two parameter automations are implemented:</p>
 <ol>
-<li>When receiving MIDI Note-On messages 9-127 the fine delay knob is set to create a resonant frequency equal to the frequency defined by the MIDI note<a data-footnote="27" data-title="This is only accurate on full tape speed."></a>.</li>
+<li>When receiving MIDI Note-On messages 9-127 the fine delay knob is set to create a resonant frequency equal to the frequency defined by the MIDI note<a data-footnote="28" data-title="This is only accurate on full tape speed."></a>.</li>
 <li>The decay time in Karplus-Strong configuration is depending both on the delay time and the amount of feedback. To keep the delay time constant for different MIDI notes, the feedback is reduced for low notes. This feature can be enabled/disabled by CC89</li>
 </ol>
 <h3>Realtime Messages</h3>
@@ -954,18 +976,24 @@ So when switching to MIDI clock source, the sequencer will be set to the positio
 </tr>
 <tr>
 <td><strong>MIDI</strong></td>
-<td>Start and Stop messages are used to control the sequencer.</td>
+<td>Start and Stop messages are used to control the sequencer (if not disabled by boot setting).</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<h4>Disable Interpretation of MIDI start/stop</h4>
+<p>If the <code>WRITE</code> LED is on during startup, MIDI start/stop messages are ignored. If it is off, they are interpreted.</p>
+<p>To change this setting, hold down <code>WRITE</code> during startup.</p>
+<p>This setting is stored persistently when the device is turned off.</p>
+</blockquote>
 <h2>Firmware Updates</h2>
 <p>The device contains multiple microcontrollers whose firmwares might be updated in the future.
 Flashing firmware images can be done via MIDI, so the only hardware required is a computer, a MIDI adapter and a MIDI cable.</p>
 <blockquote>
 <h3>Determine Firmware Version</h3>
 <p>During startup, the firmware version is displayed on the <code>PATTERN</code> LEDs.</p>
-<p>Each firmware release has an ID that is displayed on the LEDs in binary format.
-For example ID 0 would be indicated by all LEDs off, ID 1 by only <code>A</code> on, ID 2 by only <code>B</code>, ID 3 by <code>A</code> and <code>B</code> and so on.</p>
+<p>Each firmware release has an ID that is displayed on the LEDs from top to bottom.<br>
+ID 0 is indicated by all LEDs off, ID 1 by <code>A</code> on, and ID 2 by <code>B</code> on, and so on.</br></p>
 </blockquote>
 <p>The firmware updates are packed into multiple SysEx messages, which are unpacked by the device bootloader and written to the internal flash memory.</p>
 <p>To upload a new firmware, you first need to boot the device into Bootloader mode.</p>
@@ -976,8 +1004,8 @@ You will see an animation on the <code>1-8</code> LEDs indicating that you are n
 </blockquote>
 <p>As the bootloader needs some time to process the SysEx messages, they may not be sent too fast by the computer.
 To ensure this, we placed the SysEx messages at certain positions in a regular MIDI file.
-All you have to do is send<a data-footnote="28" data-title="Please note, that ‘sending’ the .mid file is something else than ‘playing it back’, which usually means interpreting it and generating audio from it."></a> that MIDI file through the port Thyme is connected to.</p>
-<p>Unfortunately there are hardly any<a data-footnote="29" data-title="On Linux you can use aplaymidi from the commandline."></a> applications that do this fairly simple job so we wrote one ourselves.
+All you have to do is send<a data-footnote="29" data-title="Please note, that ‘sending’ the .mid file is something else than ‘playing it back’, which usually means interpreting it and generating audio from it."></a> that MIDI file through the port Thyme is connected to.</p>
+<p>Unfortunately there are hardly any<a data-footnote="30" data-title="On Linux you can use aplaymidi from the commandline."></a> applications that do this fairly simple job so we wrote one ourselves.
 It can be downloaded for Linux, MacOS and Windows <a href="https://github.com/bastl-instruments/sysex-playback/releases/latest">here</a>.</p>
 <blockquote>
 <h3>Send Firmware Update</h3>
@@ -1096,6 +1124,10 @@ They are displayed before the general indication.</p>
 <tr>
 <td>5. September 2018</td>
 <td>Added more detailed specifications about maximum delay length<br/>Improved description of firmware version display</td>
+</tr>
+<tr>
+<td>17. Juni 2019</td>
+<td>Added disabling MIDI of start/stop interpretation<br/>Added triplet quantization<br/>Added half/double tape speed</td>
 </tr>
 </tbody>
 </table>
